@@ -1,0 +1,90 @@
+SENAC HUB — CONEXÕES E PROJETOS
+Primeira versão demonstrativa • 13/10/2026
+
+COMO COLOCAR NO NETLIFY — PACOTE CORRIGIDO
+O index.html agora está diretamente na raiz do ZIP, sem subpasta site.
+
+Para corrigir o site já publicado:
+1. Baixe e extraia este ZIP em uma pasta nova.
+2. Abra o projeto existente no Netlify e entre em Deploys.
+3. Arraste a pasta extraída para a área de deploy manual. Dentro dessa pasta,
+   index.html, app.js e styles.css devem aparecer diretamente.
+4. Espere o deploy terminar e abra a URL principal do site (terminada em
+   .netlify.app, sem acrescentar /site ou outro caminho).
+
+Não é necessário instalar programas, executar npm ou configurar compilação.
+
+O QUE ESTÁ INCLUÍDO
+• As seis abas solicitadas, com navegação semelhante à referência da Saga.
+• Visual responsivo em azul e laranja, com identidade textual Senac Hub.
+• Perfil com nome completo, e-mail e telefone, sem CPF ou RG.
+• Cadastro e edição de PIs; busca, filtros e página de detalhes.
+• Anexos reais salvos no navegador: PDF, DOCX, PPTX, XLSX, JPG e PNG.
+• Até cinco anexos por envio, 10 MB por arquivo.
+• Fluxo demonstrativo de rascunho, análise, ajustes e publicação.
+• Projetos concluídos selecionáveis para a Vitrine.
+• Cadastro de empresas e demandas, vínculo entre demanda e PI.
+• Cadastro de oportunidades e inscrições locais, sem duplicação.
+• Talentos com competências e opção de exibir seu perfil de teste.
+• Exportação JSON dos registros e anexos em Perfil.
+• Restauração dos exemplos e exclusão dos testes, com confirmação.
+
+IMPORTANTE: ESCOPO DESTA ENTREGA
+Este é um protótipo interativo com persistência local (IndexedDB).
+NÃO é ainda uma plataforma institucional multiusuário.
+
+Os cadastros e anexos ficam somente no navegador de cada visitante.
+Publicar os arquivos no Netlify NÃO compartilha esses registros com outros
+visitantes. Não há login real, envio de e-mail, mensagens, banco de dados
+remoto ou controle de permissões no servidor. Os controles de aprovação
+estão disponíveis para testar o fluxo e não representam uma área segura.
+
+Use dados fictícios nesta fase. Os exemplos incluídos são identificados como
+fictícios; não representam projetos, empresas ou eventos reais do Senac.
+E-mail e telefone não aparecem nas páginas de talentos, mas estão nos dados
+locais e na cópia exportada. Proteja seu dispositivo e os arquivos exportados.
+
+Limpar o navegador, usar janela anônima, outro dispositivo ou outro endereço
+pode eliminar o acesso aos registros. Exporte antes de qualquer alteração.
+O arquivo JSON exportado contém os anexos em base64 e pode ser usado em uma
+futura migração. Não há importador automático nesta versão.
+
+PARA COLOCAR EM USO COM ALUNOS E EMPRESAS
+Será necessário implementar e configurar um backend, por exemplo, Supabase
+ou um serviço institucional autorizado, contemplando:
+• Autenticação e verificação de e-mail.
+• Usuários, equipes, vínculos e papéis validados pela administração.
+• Banco de dados compartilhado e permissões por registro.
+• Armazenamento privado e acesso controlado a anexos.
+• Moderação e histórico de versões publicadas.
+• Fluxo real de autorização para os perfis e imagens dos estudantes.
+• Backup e políticas institucionais de uso e privacidade.
+• Notificações e inscrições com validação no servidor.
+
+Depois da integração, atualizar os cabeçalhos CSP em _headers para os
+endereços estritamente necessários e retirar os controles de simulação.
+As credenciais privadas nunca devem ser inseridas em app.js.
+
+ARQUIVOS
+index.html  — estrutura e metadados
+styles.css  — aparência e adaptação ao celular
+app.js      — navegação, cadastros, filtros e persistência local
+_headers   — cabeçalhos para hospedagem Netlify
+netlify.toml — configuração para publicar esta pasta
+
+PERSONALIZAÇÃO
+As cores principais ficam no início de styles.css.
+Os exemplos ficam no objeto seed de app.js.
+Não foi redesenhada uma logo oficial: o cabeçalho utiliza texto.
+Ao receber a logo autorizada, pode-se adicionar o arquivo e substituir a
+identidade textual no cabeçalho de index.html.
+
+VERIFICAÇÃO
+Sintaxe JavaScript e fluxos principais verificados em ambiente de teste:
+cadastro de PI com anexo, revisão, publicação, Vitrine, filtros, escape de
+texto e bloqueio de inscrições encerradas. Não foi possível realizar uma
+inspeção visual automatizada em navegador nesta sessão. Confira o site
+publicado em computador e celular antes da apresentação à equipe.
+
+Referência de hospedagem:
+https://docs.netlify.com/deploy/create-deploys/
